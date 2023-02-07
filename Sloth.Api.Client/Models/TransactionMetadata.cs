@@ -1,0 +1,19 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace Sloth.Api.Client.Models;
+
+public class TransactionMetadata
+{
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+
+    public string TransactionId { get; set; }
+
+    public Transaction Transaction { get; set; }
+
+    [Required]
+    [MaxLength(128)]
+    public string Name { get; set; }
+
+    [Required]
+    public string Value { get; set; }
+}
