@@ -10,7 +10,7 @@ namespace Sloth.Api.Attributes
         {
         }
 
-        public override bool IsValid(object value)
+        public override bool IsValid(object? value)
         {
             var list = value as IList;
             if (list == null)

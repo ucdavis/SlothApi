@@ -13,16 +13,16 @@ public interface ISlothApi
     Task<Response<IList<Transaction>>> GetTop1Transactions();
 
     [Get("transactions/{id}")]
-    Task<Response<Transaction>> GetTransactionById(string id);
+    Task<Response<Transaction>> GetTransactionById([Path] string id);
 
     [Get("transactions/processor/{id}")]
-    Task<Response<Transaction>> GetTransactionByProcessorId(string id);
+    Task<Response<Transaction>> GetTransactionByProcessorId([Path] string id);
 
     [Get("transactions/kfskey/{id}")]
-    Task<Response<IList<Transaction>>> GetTransactionsByKfsKey(string id);
+    Task<Response<IList<Transaction>>> GetTransactionsByKfsKey([Path] string id);
 
     [Get("transactions/validate/{id}")]
-    Task<Response<bool>> ValidateFinancialSegmentString(string id);
+    Task<Response<bool>> ValidateFinancialSegmentString([Path] string id);
 
     [Post("transactions")]
     Task<HttpResponseMessage> CreateTransaction([Body] CreateTransactionViewModel transaction);

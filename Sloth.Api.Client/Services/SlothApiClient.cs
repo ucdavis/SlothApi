@@ -102,7 +102,7 @@ public class SlothApiClient : ISlothApiClient
         {
             StatusCode = response.ResponseMessage.StatusCode,
             Success = response.ResponseMessage.IsSuccessStatusCode,
-            Message = response.ResponseMessage.ReasonPhrase,
+            Message = response.ResponseMessage.ReasonPhrase ?? "",
             Data  = response.ResponseMessage.IsSuccessStatusCode ? response.GetContent() : default
         };
 
@@ -115,7 +115,7 @@ public class SlothApiClient : ISlothApiClient
         {
             StatusCode = response.StatusCode,
             Success = response.IsSuccessStatusCode,
-            Message = response.ReasonPhrase,
+            Message = response.ReasonPhrase ?? "",
         };
 
         return result;

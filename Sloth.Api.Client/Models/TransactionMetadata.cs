@@ -6,14 +6,12 @@ public class TransactionMetadata
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
-    public string TransactionId { get; set; }
-
-    public Transaction Transaction { get; set; }
+    public string TransactionId { get; set; } = "";
 
     [Required]
     [MaxLength(128)]
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
 
     [Required]
-    public string Value { get; set; }
+    public string Value { get; set; } = "";
 }

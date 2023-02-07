@@ -17,7 +17,7 @@ public class CreateTransferViewModel
     /// To use Aggie Enterprise, fill out this field instead of Chat, Account, etc.
     /// </summary>
     [Required]
-    public string FinancialSegmentString { get; set; }
+    public string FinancialSegmentString { get; set; } = "";
 
     /// <summary>
     /// A brief description of the specific transaction. Displays in reporting.
@@ -25,7 +25,7 @@ public class CreateTransferViewModel
     /// </summary>
     [MaxLength(40)]
     [Required]
-    public string Description { get; set; }
+    public string Description { get; set; } = "";
 
     /// <summary>
     /// Optional: The accounting date of the transfer. Will be defaulted to today's date if not provided.
@@ -43,5 +43,5 @@ public class CreateTransferViewModel
     /// </summary>
     [MinLength(1)]
     [MaxLength(8)]
-    public string ReferenceId { get; set; }
+    public string ReferenceId { get; set; } = "";
 }

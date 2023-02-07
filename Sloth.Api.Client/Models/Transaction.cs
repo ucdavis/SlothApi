@@ -16,32 +16,32 @@ public class Transaction
 
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
-    public string Description { get; set; }
+    public string Description { get; set; } = "";
 
 
     // Status updates must go through SetStatus to ensure StatusEvents are properly updated
     [MaxLength(20)]
-    public string Status { get; private set; }
+    public string Status { get; private set; } = "";
 
     /// <summary>
     /// Tracking Number created by the merchant accountant
     /// </summary>
     [MaxLength(128)]
     [DisplayName("Merchant Tracking Number")]
-    public string MerchantTrackingNumber { get; set; }
+    public string MerchantTrackingNumber { get; set; } = "";
 
     /// <summary>
     /// URL created by the merchant to track back
     /// </summary>
     [Display(Name = "Merchant Url")]
-    public string MerchantTrackingUrl { get; set; }
+    public string MerchantTrackingUrl { get; set; } = "";
 
     /// <summary>
     /// Tracking Number created by the payment processor
     /// </summary>
     [MaxLength(128)]
     [DisplayName("Processor Tracking Number")]
-    public string ProcessorTrackingNumber { get; set; }
+    public string ProcessorTrackingNumber { get; set; } = "";
 
     /// <summary>
     /// Unique identifier for a set of related transactions per origination code.
@@ -52,7 +52,7 @@ public class Transaction
     [MaxLength(14)]
     [RegularExpression("[A-Z0-9]*")]
     [DisplayName("Document Number")]
-    public string DocumentNumber { get; set; }
+    public string DocumentNumber { get; set; } = "";
 
     /// <summary>
     /// Primarily used in Decision Support reporting for additional transaction identification.
@@ -61,7 +61,7 @@ public class Transaction
     [MinLength(1)]
     [MaxLength(10)]
     [DisplayName("Kfs Tracking Number")]
-    public string KfsTrackingNumber { get; set; }
+    public string KfsTrackingNumber { get; set; } = "";
 
     /// <summary>
     /// Date the transaction occurred.
@@ -73,23 +73,23 @@ public class Transaction
     public IList<Transfer> Transfers { get; set; }
 
 
-    public string ScrubberId { get; set; }
+    public string ScrubberId { get; set; } = "";
 
     [DisplayName("Reversal for Transaction")]
-    public Transaction ReversalOfTransaction { get; set; }
+    public Transaction? ReversalOfTransaction { get; set; }
 
     [DisplayName("Reversal for Transaction Id")]
-    public string ReversalOfTransactionId { get; set; }
+    public string? ReversalOfTransactionId { get; set; }
 
     [NotMapped]
     [DisplayName("Is Reversal Transaction")]
     public bool IsReversal => !string.IsNullOrEmpty(ReversalOfTransactionId);
 
     [DisplayName("Reversal Transaction")]
-    public Transaction ReversalTransaction { get; set; }
+    public Transaction? ReversalTransaction { get; set; }
 
     [DisplayName("Reversal Transaction Id")]
-    public string ReversalTransactionId { get; set; }
+    public string? ReversalTransactionId { get; set; }
 
     [NotMapped]
     [DisplayName("Has Reversal Transaction")]

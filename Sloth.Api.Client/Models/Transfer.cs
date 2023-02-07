@@ -19,7 +19,7 @@ public class Transfer
     /// KFS: Chart Code associated with transaction.
     /// </summary>
     [MaxLength(1)]
-    public string Chart { get; set; }
+    public string Chart { get; set; } = "";
 
     /// <summary>
     /// KFS: Account used in the general ledger to post transactions.
@@ -27,7 +27,7 @@ public class Transfer
     /// </summary>
     [MaxLength(7)]
     [RegularExpression("[A-Z0-9]*")]
-    public string Account { get; set; }
+    public string Account { get; set; } = "";
 
     /// <summary>
     /// KFS: Sub-Account is an optional accounting unit attribute.
@@ -35,7 +35,7 @@ public class Transfer
     /// </summary>
     [MaxLength(5)]
     [RegularExpression("[A-Z0-9]*")]
-    public string SubAccount { get; set; }
+    public string SubAccount { get; set; } = "";
 
     /// <summary>
     /// KFS: Object codes represent all income, expense, asset, liability and fund balance classification
@@ -45,7 +45,7 @@ public class Transfer
     [MaxLength(4)]
     [RegularExpression("[A-Z0-9]*")]
     [Display(Name = "Object Code")]
-    public string ObjectCode { get; set; }
+    public string ObjectCode { get; set; } = "";
 
     /// <summary>
     /// KFS: Sub-Object is an optional accounting unit attribute that allows finer
@@ -54,7 +54,7 @@ public class Transfer
     /// </summary>
     [MaxLength(3)]
     [RegularExpression("[A-Z0-9]*")]
-    public string SubObjectCode { get; set; }
+    public string SubObjectCode { get; set; } = "";
 
     /// <summary>
     /// KFS: Object Type defines the general use of an object code; such as income, asset, expense, or liability.
@@ -62,7 +62,7 @@ public class Transfer
     /// It is recommended not to include these values.
     /// </summary>
     [MaxLength(2)]
-    public string ObjectType { get; set; }
+    public string ObjectType { get; set; } = "";
 
     /// <summary>
     /// Aggie Enterprise: Full COA string (GL or PPM)
@@ -70,7 +70,7 @@ public class Transfer
     /// </summary>
     [MaxLength(128)]
     [Display(Name = "Aggie Enterprise COA String")]
-    public string FinancialSegmentString { get; set; }
+    public string FinancialSegmentString { get; set; } = "";
 
     /// <summary>
     /// A sequential number for a transaction in document number set.
@@ -85,7 +85,7 @@ public class Transfer
     /// </summary>
     [MaxLength(40)]
     [Required]
-    public string Description { get; set; }
+    public string Description { get; set; } = "";
 
     /// <summary>
     /// Debit or Credit Code associated with the transaction.
@@ -129,14 +129,14 @@ public class Transfer
     /// </summary>
     [MinLength(1)]
     [MaxLength(10)]
-    public string Project { get; set; }
+    public string Project { get; set; } = "";
 
     /// <summary>
     /// Optional field for organizational reference purposes.
     /// </summary>
     [MinLength(1)]
     [MaxLength(8)]
-    public string ReferenceId { get; set; }
+    public string ReferenceId { get; set; } = "";
 
     #region Helpers
     public string FullAccountToString()
