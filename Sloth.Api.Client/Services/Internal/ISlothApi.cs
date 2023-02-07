@@ -4,6 +4,7 @@ using Sloth.Api.Client.Models;
 
 namespace Sloth.Api.Client.Services.Internal;
 
+[AllowAnyStatusCode] // Prevent ApiException from being thrown for non-2xx responses
 public interface ISlothApi
 {
     [Header("X-API-Key")]
