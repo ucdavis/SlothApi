@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Sloth.Api.Attributes;
 
-namespace Sloth.Api.Client.Models;
+namespace SlothApi.Models;
 
+/// <summary>
+/// Payload DTO for requests to create a transaction
+/// </summary>
+/// <seealso cref="SlothApi.Services.ISlothApiClient.CreateTransaction" />
 public class CreateTransactionViewModel
 {
     public CreateTransactionViewModel()
@@ -25,7 +29,7 @@ public class CreateTransactionViewModel
     /// Run full validation on the financial segment strings
     /// Defaults to true
     /// </summary>
-    public bool ValidateFinancialSegmentStrings { get; set; }
+    public bool ValidateFinancialSegmentStrings { get; set; } = true;
 
     /// <summary>
     /// Tracking Number created by the merchant accountant

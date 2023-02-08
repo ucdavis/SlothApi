@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sloth.Api.Client.Models;
+namespace SlothApi.Models;
 
 public class Transfer
 {

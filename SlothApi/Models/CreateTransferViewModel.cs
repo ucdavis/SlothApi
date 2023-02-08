@@ -1,8 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sloth.Api.Client.Models;
+namespace SlothApi.Models;
 
+/// <summary>
+/// Payload DTO for requests to create a transfer (as part of a transaction)
+/// </summary>
+/// <seealso cref="SlothApi.Services.ISlothApiClient.CreateTransaction" />
 public class CreateTransferViewModel
 {
     /// <summary>

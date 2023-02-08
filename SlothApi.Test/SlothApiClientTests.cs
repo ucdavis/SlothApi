@@ -3,12 +3,12 @@ using Moq;
 using Moq.Protected;
 using RestEase;
 using Shouldly;
-using Sloth.Api.Client.Models;
-using Sloth.Api.Client.Services;
-using Sloth.Api.Client.Services.Internal;
+using SlothApi.Models;
+using SlothApi.Services;
+using SlothApi.Services.Internal;
 using System.Net;
 
-namespace Sloth.Api.Client.Test;
+namespace SlothApi.Test;
 
 public class SlothApiClientTests
 {
@@ -41,7 +41,7 @@ public class SlothApiClientTests
         }));
 
         // Act
-        var result = await slothClient.ValidateFinancialSegmentString("asdf");
+        var result = await slothClient.ValidateChartOfAccounts("asdf");
 
         // Assert
         messageHandlerMock.Verify();
@@ -78,7 +78,7 @@ public class SlothApiClientTests
         }));
 
         // Act
-        var result = await slothClient.ValidateFinancialSegmentString("asdf");
+        var result = await slothClient.ValidateChartOfAccounts("asdf");
 
         // Assert
         messageHandlerMock.Verify();

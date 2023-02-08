@@ -1,8 +1,8 @@
 
 using RestEase;
-using Sloth.Api.Client.Models;
+using SlothApi.Models;
 
-namespace Sloth.Api.Client.Services.Internal;
+namespace SlothApi.Services.Internal;
 
 [AllowAnyStatusCode] // Prevent ApiException from being thrown for non-2xx responses
 public interface ISlothApi

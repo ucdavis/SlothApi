@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Sloth.Api.Client.Test/Sloth.Api.Client.Test.csproj",
+        "${workspaceFolder}/SlothApi.Test/SlothApi.Test.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -19,7 +19,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/Sloth.Api.Client.Test/Sloth.Api.Client.Test.csproj",
+        "${workspaceFolder}/SlothApi.Test/SlothApi.Test.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -33,7 +33,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/Sloth.Api.Client.Test/Sloth.Api.Client.Test.csproj"
+        "${workspaceFolder}/SlothApi.Test/SlothApi.Test.csproj"
       ],
       "problemMatcher": "$msCompile"
     }

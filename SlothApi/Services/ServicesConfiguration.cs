@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using RestEase.HttpClientFactory;
-using Sloth.Api.Client.Models;
-using Sloth.Api.Client.Services.Internal;
+using SlothApi.Models;
+using SlothApi.Services.Internal;
 
-namespace Sloth.Api.Client.Services;
+namespace SlothApi.Services;
 
 public static class ServicesConfiguration
 {

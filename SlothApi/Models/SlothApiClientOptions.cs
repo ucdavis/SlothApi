@@ -1,4 +1,4 @@
-namespace Sloth.Api.Client.Models;
+namespace SlothApi.Models;
 
 public class SlothApiClientOptions
 {
