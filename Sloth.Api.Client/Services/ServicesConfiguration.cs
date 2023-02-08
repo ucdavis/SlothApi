@@ -9,7 +9,10 @@ public static class ServicesConfiguration
 {
     public static void AddSlothApiClient(this IServiceCollection services, Action<SlothApiClientOptions> configure)
     {
-        ArgumentNullException.ThrowIfNull(configure);
+        if (configure == null)
+        {
+            throw new ArgumentNullException(nameof(configure));
+        }
 
         var options = new SlothApiClientOptions();
         configure.Invoke(options);

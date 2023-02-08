@@ -89,7 +89,10 @@ public class SlothApiClient : ISlothApiClient
 
     public async Task<ApiResult> CreateTransaction(CreateTransactionViewModel transaction)
     {
-        ArgumentNullException.ThrowIfNull(transaction);
+        if (transaction == null)
+        {
+            throw new ArgumentNullException(nameof(transaction));
+        }
 
         using var response = await  _slothApi.CreateTransaction(transaction);
         var result = GetResult(response);

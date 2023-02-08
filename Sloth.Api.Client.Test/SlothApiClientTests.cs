@@ -13,7 +13,7 @@ namespace Sloth.Api.Client.Test;
 public class SlothApiClientTests
 {
     [Fact]
-    public async void SegmentValidationShouldSucceed()
+    public async void ApiRequestShouldSucceed()
     {
         // Arrange
         var apiKey = "";
@@ -51,7 +51,7 @@ public class SlothApiClientTests
     }
 
     [Fact]
-    public async void SegmentValidationShouldFail()
+    public async void ShouldHandleUnsuccessfulResponse()
     {
         // Arrange
         var apiKey = "";
