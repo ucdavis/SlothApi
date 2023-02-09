@@ -1,3 +1,6 @@
+[![Build Status](https://dev.azure.com/ucdavis/SlothApi/_apis/build/status/ucdavis.SlothApi?branchName=main)](https://dev.azure.com/ucdavis/SlothApi/_build/latest?definitionId=35&branchName=main)
+[![Build Status](https://github.com/ucdavis/SlothApi/actions/workflows/codeql.yml/badge.svg)](https://github.com/ucdavis/SlothApi/actions/workflows/codeql.yml/badge.svg)
+
 # SlothApi
 
 A netstandard2.0 library for sending requests to Sloth API
