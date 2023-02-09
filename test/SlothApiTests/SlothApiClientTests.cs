@@ -8,7 +8,7 @@ using SlothApi.Services;
 using SlothApi.Services.Internal;
 using System.Net;
 
-namespace SlothApi.Test;
+namespace SlothApiTests;
 
 public class SlothApiClientTests
 {

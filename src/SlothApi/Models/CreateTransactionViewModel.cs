@@ -29,7 +29,7 @@ public class CreateTransactionViewModel
     /// Run full validation on the financial segment strings
     /// Defaults to true
     /// </summary>
-    public bool ValidateFinancialSegmentStrings { get; set; } = true;
+    public bool ValidateFinancialSegmentStrings { get; set; }
 
     /// <summary>
     /// Tracking Number created by the merchant accountant
@@ -78,11 +78,11 @@ public class CreateTransactionViewModel
     [ListMinLength(2)]
     [Required]
     public IList<CreateTransferViewModel> Transfers { get; set; }
+}
 
-    public class MetadataEntry
-    {
-        public string Name { get; set; } = "";
-        public string Value { get; set; } = "";
-    }
+public class MetadataEntry
+{
+    public string Name { get; set; } = "";
+    public string Value { get; set; } = "";
 }
 

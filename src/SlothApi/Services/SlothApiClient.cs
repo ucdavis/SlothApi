@@ -62,7 +62,7 @@ public class SlothApiClient : ISlothApiClient
         _slothApi.ApiKey = options.Value.ApiKey;
     }
 
-    public SlothApiClient(IOptions<SlothApiClientOptions> options) : this(RestClient.For<ISlothApi>(options.Value.BaseUrl), options)
+    public SlothApiClient(SlothApiClientOptions options) : this(RestClient.For<ISlothApi>(options.BaseUrl), Options.Create(options))
     {
     }
 

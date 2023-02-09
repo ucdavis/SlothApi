@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlothApi", "SlothApi\SlothApi.csproj", "{9E4C1DD3-A902-43EE-A7A7-591F33008A24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlothApi", "src\SlothApi\SlothApi.csproj", "{9E4C1DD3-A902-43EE-A7A7-591F33008A24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlothApi.Test", "SlothApi.Test\SlothApi.Test.csproj", "{D67FB9D1-FB3E-40CC-90CC-4654259D1E58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlothApiTests", "test\SlothApiTests\SlothApiTests.csproj", "{D67FB9D1-FB3E-40CC-90CC-4654259D1E58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

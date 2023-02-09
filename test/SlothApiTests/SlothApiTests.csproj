@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SlothApi\SlothApi.csproj" />
+    <ProjectReference Include="..\..\src\SlothApi\SlothApi.csproj" />
   </ItemGroup>
 
 </Project>
