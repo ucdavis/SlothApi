@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <PackageId>SlothApi</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/ucdavis/SlothApi</PackageProjectUrl>
     <Version>1.0.0</Version>
     <Authors>Spruce Weber-Milne</Authors>
     <Company>UC Davis</Company>
