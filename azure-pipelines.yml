@@ -9,7 +9,7 @@ variables:
   buildPlatform: "Any CPU"
   buildConfiguration: "Release"
   majorVersion: 1
-  minorVersion: 0
+  minorVersion: 1
   patchVersion: $[counter(variables['minorVersion'], 0)]
   version: $(majorVersion).$(minorVersion).$(patchVersion)
 
@@ -39,8 +39,14 @@ steps:
       ArtifactName: "drop"
       publishLocation: "Container"
 
+  - task: DotNetCoreCLI@2
+    displayName: "Test"
+    inputs:
+      command: "test"
+      projects: "./test/SlothApiTests/SlothApiTests.csproj"
+
   - task: NuGetCommand@2
-    condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
     inputs:
       command: "push"
       packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"

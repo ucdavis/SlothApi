@@ -26,5 +26,5 @@ public interface ISlothApi
     Task<Response<bool>> ValidateFinancialSegmentString([Path] string id);
 
     [Post("transactions")]
-    Task<HttpResponseMessage> CreateTransaction([Body] CreateTransactionViewModel transaction);
+    Task<Response<Transaction>> CreateTransaction([Body] CreateTransactionViewModel transaction);
 }

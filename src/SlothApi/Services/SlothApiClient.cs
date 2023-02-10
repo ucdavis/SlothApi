@@ -48,7 +48,7 @@ public interface ISlothApiClient
     /// Request creation of <seealso cref="Transaction"> for given <paramref name="transactionViewModel"/>
     /// </summary>
     /// <param name="transaction"></param>
-    Task<ApiResult> CreateTransaction(CreateTransactionViewModel transactionViewModel);
+    Task<ApiResult<Transaction>> CreateTransaction(CreateTransactionViewModel transactionViewModel);
 }
 
 public class SlothApiClient : ISlothApiClient
@@ -143,7 +143,7 @@ public class SlothApiClient : ISlothApiClient
     /// Request creation of <seealso cref="Transaction"> for given <paramref name="transactionViewModel"/>
     /// </summary>
     /// <param name="transaction"></param>
-    public async Task<ApiResult> CreateTransaction(CreateTransactionViewModel transactionViewModel)
+    public async Task<ApiResult<Transaction>> CreateTransaction(CreateTransactionViewModel transactionViewModel)
     {
         if (transactionViewModel == null)
         {
