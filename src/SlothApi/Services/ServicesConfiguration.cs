@@ -30,5 +30,7 @@ public static class ServicesConfiguration
                 o.BaseUrl = options.BaseUrl;
                 o.ApiKey = options.ApiKey;
             });
+
+        services.AddScoped<ISlothApiClient, SlothApiClient>();
     }
 }
