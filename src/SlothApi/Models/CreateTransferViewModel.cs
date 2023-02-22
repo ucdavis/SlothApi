@@ -47,5 +47,5 @@ public class CreateTransferViewModel
     /// </summary>
     [MinLength(1)]
     [MaxLength(8)]
-    public string ReferenceId { get; set; } = "";
+    public string? ReferenceId { get; set; }
 }

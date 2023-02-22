@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using RestEase;
@@ -32,7 +33,7 @@ public interface ISlothApiClient
     /// </summary>
     /// <param name="processorTrackingNumber">Tracking number assigned to transaction by third-party processor, <seealso cref="Transaction.ProcessorTrackingNumber" /></param>
     Task<ApiResult<Transaction>> GetTransactionByProcessorId(string processorTrackingNumber);
-    
+
     /// <summary>
     /// Fetch list of <seealso cref="Transaction"> by <paramref name="kfsTrackingNumber" />
     /// </summary>
@@ -163,7 +164,9 @@ public class SlothApiClient : ISlothApiClient
         {
             StatusCode = response.ResponseMessage.StatusCode,
             Success = response.ResponseMessage.IsSuccessStatusCode,
-            Message = response.ResponseMessage.ReasonPhrase ?? "",
+            Message = response.ResponseMessage.StatusCode == HttpStatusCode.BadRequest
+                ? $"Bad Request: {response.StringContent}"
+                : response.ResponseMessage.ReasonPhrase ?? "",
             Data = response.ResponseMessage.IsSuccessStatusCode ? response.GetContent() : default
         };
 
