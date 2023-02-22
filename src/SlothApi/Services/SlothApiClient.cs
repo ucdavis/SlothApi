@@ -55,6 +55,8 @@ public class SlothApiClient : ISlothApiClient
 {
     private readonly ISlothApi _slothApi;
 
+    public const string ApiKeyHeader = "X-Auth-Token";
+
     [ActivatorUtilitiesConstructor]
     public SlothApiClient(ISlothApi slothApi, IOptions<SlothApiClientOptions> options)
     {
