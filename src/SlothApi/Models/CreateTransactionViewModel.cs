@@ -11,12 +11,13 @@ namespace SlothApi.Models;
 /// <seealso cref="SlothApi.Services.ISlothApiClient.CreateTransaction" />
 public class CreateTransactionViewModel
 {
-    public CreateTransactionViewModel()
+    public CreateTransactionViewModel(string source, string sourceType)
     {
-        AutoApprove = false;
         ValidateFinancialSegmentStrings = true;
         Transfers = new List<CreateTransferViewModel>();
         Metadata = new List<MetadataEntry>();
+        Source = source;
+        SourceType = sourceType;
     }
 
     /// <summary>
@@ -35,45 +36,45 @@ public class CreateTransactionViewModel
     /// Tracking Number created by the merchant accountant
     /// </summary>
     [MaxLength(128)]
-    public string MerchantTrackingNumber { get; set; } = "";
+    public string? MerchantTrackingNumber { get; set; }
 
     /// <summary>
     ///  URL created by the merchant accountant referring to originating action
     /// </summary>
-    public string MerchantTrackingUrl { get; set; } = "";
+    public string? MerchantTrackingUrl { get; set; }
 
     /// <summary>
     /// Tracking Number created by the payment processor
     /// </summary>
     [MaxLength(128)]
-    public string ProcessorTrackingNumber { get; set; } = "";
+    public string? ProcessorTrackingNumber { get; set; }
 
     /// <summary>
     /// Optionally set the kfs tracking number to be used
     /// </summary>
     [MaxLength(10)]
-    public string KfsTrackingNumber { get; set; } = "";
+    public string? KfsTrackingNumber { get; set; }
 
     /// <summary>
     /// Source of the transactions
     /// e.g. CyberSource
     /// </summary>
     [Required]
-    public string Source { get; set; } = "";
+    public string Source { get; set; }
 
     /// <summary>
     /// Type of the transactions by their source
     /// e.g. Income
     /// </summary>
     [Required]
-    public string SourceType { get; set; } = "";
+    public string SourceType { get; set; }
 
     /// <summary>
     /// Optional key/value pairs of generic metadata that will persist with this transaction
     /// </summary>
     public IList<MetadataEntry> Metadata { get; set; }
 
-    public string Description { get; set; } = "";
+    public string? Description { get; set; }
 
     [ListMinLength(2)]
     [Required]

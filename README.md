@@ -42,7 +42,7 @@ public class MyClass
 
     public async Task MoveMoney(decimal amount)
     {
-        var model = new CreateTransactionViewModel
+        var model = new CreateTransactionViewModel(source: "[a source]", sourceType: "[a source type (ie: Income)]")
         {
             MerchantTrackingNumber = "[a tracking number]",
             MerchantTrackingUrl = "[a url]",
@@ -50,30 +50,20 @@ public class MyClass
             ValidateFinancialSegmentStrings = true,
             ProcessorTrackingNumber = "[a tracking number]",
             KfsTrackingNumber = "[a tracking number]",
-            Source = "[a source]",
-            SourceType = "[a source type (ie: Income)]",
             Description = "[a description]",
             Transfers = new List<CreateTransferViewModel>
             {
                 // Must be at leaset one Debit and one Credit. Debits and credits must balance.
-                new CreateTransferViewModel
-                {
-                    Amount                 = amount,
-                    FinancialSegmentString = "[a financial segment string]",
-                    Description            = "Moving some money",
-                    Direction              = Transfer.CreditDebit.Debit,
-                    ReferenceId            = "[an optional reference id]",
-                    AccountingDate         = DateTime.UtcNow.Date // optional, defaults to today's date
-                },
-                new CreateTransferViewModel
-                {
-                    Amount                 = amount,
-                    FinancialSegmentString = "[a financial segment string]",
-                    Description            = "Moving some money",
-                    Direction              = Transfer.CreditDebit.Credit,
-                    ReferenceId            = "[an optional reference id]",
-                    AccountingDate         = DateTime.UtcNow.Date // optional, defaults to today's date
-                }
+                new CreateTransferViewModel(
+                    financialSegmentString: "[a financial segment string]", 
+                    amount: 100.00M, 
+                    description: "Moving some money", 
+                    direction: Transfer.CreditDebit.Debit),
+                new CreateTransferViewModel(
+                    financialSegmentString: "[a financial segment string]", 
+                    amount: 100.00M, 
+                    description: "Moving some money", 
+                    direction: Transfer.CreditDebit.Credit)
             },
             Metadata = new List<MetadataEntry>
             {
