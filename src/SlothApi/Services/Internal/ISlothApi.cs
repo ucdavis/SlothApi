@@ -7,7 +7,7 @@ namespace SlothApi.Services.Internal;
 [AllowAnyStatusCode] // Prevent ApiException from being thrown for non-2xx responses
 public interface ISlothApi
 {
-    [Header("X-API-Key")]
+    [Header(SlothApiClient.ApiKeyHeader)]
     string ApiKey { get; set; }
 
     [Get("transactions")]

@@ -1,5 +1,6 @@
 [![Build Status](https://dev.azure.com/ucdavis/SlothApi/_apis/build/status/ucdavis.SlothApi?branchName=main)](https://dev.azure.com/ucdavis/SlothApi/_build/latest?definitionId=35&branchName=main)
 [![Build Status](https://github.com/ucdavis/SlothApi/actions/workflows/codeql.yml/badge.svg)](https://github.com/ucdavis/SlothApi/actions/workflows/codeql.yml/badge.svg)
+[![NuGet version (SlothApi)](https://img.shields.io/nuget/v/SlothApi.svg)](https://www.nuget.org/packages/SlothApi/)
 
 # SlothApi
 

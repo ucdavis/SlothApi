@@ -22,7 +22,7 @@ public class SlothApiClientTests
             .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
             .Returns((HttpRequestMessage request, CancellationToken token) =>
             {
-                apiKey = request.Headers.GetValues("X-Api-Key").FirstOrDefault();
+                apiKey = request.Headers.GetValues(SlothApiClient.ApiKeyHeader).FirstOrDefault();
                 return Task.FromResult(new HttpResponseMessage()
                 {
                     StatusCode = HttpStatusCode.OK,
@@ -60,7 +60,7 @@ public class SlothApiClientTests
             .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
             .Returns((HttpRequestMessage request, CancellationToken token) =>
             {
-                apiKey = request.Headers.GetValues("X-Api-Key").FirstOrDefault();
+                apiKey = request.Headers.GetValues(SlothApiClient.ApiKeyHeader).FirstOrDefault();
                 return Task.FromResult(new HttpResponseMessage()
                 {
                     StatusCode = HttpStatusCode.InternalServerError,
